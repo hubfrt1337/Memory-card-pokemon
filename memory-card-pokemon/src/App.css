@@ -2,7 +2,7 @@ body {
   min-height: 100vh;
   font-family: "Press Start 2P", system-ui;;
   background: #EEAECA;
-  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: radial-gradient(circle, rgb(255, 52, 140) 0%, rgb(51, 91, 137) 100%);
 }
 
 header {
@@ -16,7 +16,7 @@ header {
 
 .game-title {
   font-size: 2rem;
-  color: rgb(114, 66, 12);
+  color: rgb(255, 168, 68);
 }
 .score{
   margin-bottom: 10px;
