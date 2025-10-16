@@ -16,11 +16,26 @@
     background: linear-gradient(90deg,rgb(60, 12, 93) 0%, rgb(197, 6, 6)0%, rgb(154, 91, 2) 100%);
 }
 .pokemon-image{
-    width: 230px;
+    width: 220px;
     height: 270px;
     object-fit: contain;
     object-position: center;
 }
 .pokemon-name{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 600px){
+    .pokemon-container{
+        height: 250px;
+        width: 150px;
+        gap: 10px;
+    }
+    .pokemon-image{
+        width: 130px;
+        height: 180px;
+    }
+    .pokemon-name{
+        font-size: 0.8rem;
+    }
 }

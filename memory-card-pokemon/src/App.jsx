@@ -9,7 +9,7 @@ function App() {
   const [lost, setLost] = useState(false);
   const [isClicked, setIsClicked] = useState({});
 
-  let pokemonNames = ["rattata", "pidgeotto", "beedrill", "weedle", "metapod", "blastoise"]
+  let pokemonNames = ["rattata", "pidgeotto", "beedrill", "weedle", "metapod", "blastoise", "butterfree", "pikachu", "jigglypuff", "gengar", "eevee", "snorlax"];
   function shuffle() {
     for (let i = 0; i < pokemonNames.length; i++) {
       const j = Math.floor(Math.random() * (i + 1));
