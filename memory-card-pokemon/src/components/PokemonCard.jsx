@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import "./PokemonCard.css"
-export function PokemonCard({name, setScore, score, setLost, setIsClicked, isClicked}) {
+export function PokemonCard({ name, setScore, score, setLost, setIsClicked, isClicked, setBestScore, bestScore }) {
     const [pokemonData, setPokemonData] = useState(null);
     useEffect(() => {
         const fetchPokemonData = async () => {
@@ -14,15 +14,19 @@ export function PokemonCard({name, setScore, score, setLost, setIsClicked, isCli
         }
         fetchPokemonData()
     }, [name])
-    
-    function clickCard(){
-        if(isClicked[name]){
+
+    function clickCard() {
+        if (isClicked[name]) {
             setScore(0)
             setLost(true)
         }
-        else
-        setScore(score + 1)
-        setIsClicked({...isClicked, [name]: true})
+        else {
+            setScore(score + 1)
+            setIsClicked({ ...isClicked, [name]: true })
+            if (score + 1 > bestScore) {
+                setBestScore(score + 1)
+            }
+        }
     }
     return (
         <div onClick={clickCard} className="pokemon-container">{!pokemonData ? ("Loading...")
