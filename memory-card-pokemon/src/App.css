@@ -2,7 +2,7 @@ body {
   min-height: 100vh;
   font-family: "Press Start 2P", system-ui;;
   background: #EEAECA;
-  background: radial-gradient(circle, rgb(255, 52, 140) 0%, rgb(51, 91, 137) 100%);
+  background: radial-gradient(circle, rgb(4, 55, 39) 0%, rgb(51, 91, 137) 100%);
 }
 
 header {

@@ -6,16 +6,22 @@ import './App.css'
 function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [lost, setLost] = useState(false);
+  const [isClicked, setIsClicked] = useState({});
+
   let pokemonNames = ["rattata", "pidgeotto", "beedrill", "weedle", "metapod", "blastoise"]
-  function shuffle(){
-    for(let i = 0; i < pokemonNames.length; i++){
+  function shuffle() {
+    for (let i = 0; i < pokemonNames.length; i++) {
       const j = Math.floor(Math.random() * (i + 1));
       [pokemonNames[i], pokemonNames[j]] = [pokemonNames[j], pokemonNames[i]]
     }
     pokemonNames.reverse()
-}
-shuffle()
-  
+  }
+  shuffle()
+  if (lost) {
+    setIsClicked({})
+    setLost(false)
+  }
   return (<>
     <header>
       <div className="game-title">Pokemon Memory Card</div>
@@ -26,15 +32,20 @@ shuffle()
     </header>
     <div className="pokemon-section">
       {pokemonNames.map(name => (
-        <PokemonCard 
-        score={score}
-        setScore={setScore}
-        key={name} 
-        name={name}></PokemonCard>
+        <PokemonCard
+          isClicked={isClicked}
+          setIsClicked={setIsClicked}
+          setLost={setLost}
+          bestScore={bestScore}
+          setBestScore={setBestScore}
+          score={score}
+          setScore={setScore}
+          key={name}
+          name={name}></PokemonCard>
       )
       )}
     </div>
-    </>
+  </>
   )
 }
 

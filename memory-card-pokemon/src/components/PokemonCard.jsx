@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 import "./PokemonCard.css"
-export function PokemonCard({name, setScore, score}) {
+export function PokemonCard({name, setScore, score, setLost, setIsClicked, isClicked}) {
     const [pokemonData, setPokemonData] = useState(null);
-    const [isClicked, setIsClicked] = useState(false)
     useEffect(() => {
         const fetchPokemonData = async () => {
             try {
@@ -15,13 +14,15 @@ export function PokemonCard({name, setScore, score}) {
         }
         fetchPokemonData()
     }, [name])
+    
     function clickCard(){
-        setScore(score + 1)
-        if(isClicked) {
+        if(isClicked[name]){
             setScore(0)
-            setIsClicked(false)
-        } else 
-        setIsClicked(true)
+            setLost(true)
+        }
+        else
+        setScore(score + 1)
+        setIsClicked({...isClicked, [name]: true})
     }
     return (
         <div onClick={clickCard} className="pokemon-container">{!pokemonData ? ("Loading...")
