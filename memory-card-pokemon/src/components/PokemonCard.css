@@ -1,8 +1,15 @@
 .pokemon-container{
     height: 350px;
     width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #833AB4;
+    justify-content: space-around;
     background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    border: 10px solid rgb(233, 78, 192);
+    cursor: pointer;
+
 }
 .pokemon-image{
     width: 230px;
@@ -12,5 +19,4 @@
 }
 .pokemon-name{
     font-size: 1.5rem;
-    padding-bottom: 1.5rem;
 }

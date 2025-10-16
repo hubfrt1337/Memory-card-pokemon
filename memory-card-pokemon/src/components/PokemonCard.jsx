@@ -8,7 +8,6 @@ export function PokemonCard({name}) {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
                 const data = await response.json()
                 setPokemonData(data)
-                console.log(data)
             } catch (error) {
                 console.log(error)
             }
