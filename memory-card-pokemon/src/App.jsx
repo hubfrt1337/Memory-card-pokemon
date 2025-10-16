@@ -6,7 +6,16 @@ import './App.css'
 function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const pokemonNames = ["rattata", "pidgeotto", "beedrill", "weedle", "metapod", "blastoise"]
+  let pokemonNames = ["rattata", "pidgeotto", "beedrill", "weedle", "metapod", "blastoise"]
+  function shuffle(){
+    for(let i = 0; i < pokemonNames.length; i++){
+      const j = Math.floor(Math.random() * (i + 1));
+      [pokemonNames[i], pokemonNames[j]] = [pokemonNames[j], pokemonNames[i]]
+    }
+    pokemonNames.reverse()
+}
+shuffle()
+  
   return (<>
     <header>
       <div className="game-title">Pokemon Memory Card</div>
